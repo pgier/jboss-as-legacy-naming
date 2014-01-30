@@ -1,4 +1,4 @@
-<module xmlns="urn:jboss:module:1.0" name="org.jboss.legacy.naming.jnp">
+<module xmlns="urn:jboss:module:1.0" name="org.jboss.legacy.jnp">
     <resources>
         <resource-root path="jboss-as-legacy-naming-jnp.jar"/>
     </resources>

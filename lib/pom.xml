@@ -60,10 +60,6 @@
 	<dependency>
 	    <groupId>org.jboss.as</groupId>
 	    <artifactId>jboss-as-clustering-registry</artifactId>
-	</dependency>
-	<dependency>
-	    <groupId>org.jboss.as</groupId>
-	    <artifactId>jboss-as-jacorb</artifactId>
 	</dependency><!--
 	<dependency>
 	    <groupId>org.jboss.as</groupId>
@@ -345,6 +341,14 @@
 				    <destFileName>jboss-remoting.jar</destFileName>
 				</artifactItem>
 				<artifactItem>
+				    <groupId>org.jboss.jbossas</groupId>
+				    <artifactId>jboss-as-server</artifactId>
+				    <type>jar</type>
+				    <overWrite>true</overWrite>
+				    <outputDirectory>${directory.dependencies}</outputDirectory>
+				    <destFileName>jboss-as-server.jar</destFileName>
+				</artifactItem>
+				<artifactItem>
 				    <groupId>org.jboss.security</groupId>
 				    <artifactId>jboss-security-spi</artifactId>
 				    <type>jar</type>
@@ -360,6 +364,7 @@
 				    <outputDirectory>${directory.dependencies}</outputDirectory>
 				    <destFileName>jbosssx.jar</destFileName>
 				</artifactItem>
+				<!--
 				<artifactItem>
 				    <groupId>org.jboss.spec.javax.jms</groupId>
 				    <artifactId>jboss-jms-api_1.1_spec</artifactId>
@@ -367,7 +372,7 @@
 				    <overWrite>true</overWrite>
 				    <outputDirectory>${directory.dependencies}</outputDirectory>
 				    <destFileName>jboss-jms-api_1.1_spec.jar</destFileName>
-				</artifactItem>
+				</artifactItem>-->
 				<artifactItem>
 				    <groupId>oswego-concurrent</groupId>
 				    <artifactId>concurrent</artifactId>
@@ -424,14 +429,6 @@
 				    <overWrite>true</overWrite>
 				    <outputDirectory>${directory.dependencies}</outputDirectory>
 				    <destFileName>jboss-ha-server-cache-spi.jar</destFileName>
-				</artifactItem>
-				<artifactItem>
-				    <groupId>org.jboss.javaee</groupId>
-				    <artifactId>jboss-jacc-api-1.1_spec</artifactId>
-				    <type>jar</type>
-				    <overWrite>true</overWrite>
-				    <outputDirectory>${directory.dependencies}</outputDirectory>
-				    <destFileName>jboss-jacc-api-1.1_spec.jar</destFileName>
 				</artifactItem>
 				<artifactItem>
 				    <groupId>org.jboss.jbossas</groupId>
@@ -506,6 +503,37 @@
 			</goals>
 			<configuration>
 			    <target>
+				<taskdef resource="net/sf/antcontrib/antlib.xml" classpathref="maven.plugin.classpath" />
+				<for param="jar">
+				    <path>
+					<fileset dir="${directory.dependencies}" includes="**/*.jar"/>
+				    </path>
+				    <sequential>
+					<!-- Remove any existing signatures from a JAR file. -->
+					<tempfile prefix="usignjar-" destdir="${java.io.tmpdir}" property="temp.file"/>
+					<echo message="Removing signatures from JAR: @{jar}"/>
+					<mkdir dir="${temp.file}"/>
+                
+					<unjar src="@{jar}" dest="${temp.file}">
+					    <patternset>
+						<include name="**"/>
+						<exclude name="META-INF/*.SF"/>
+						<exclude name="META-INF/*.DSA"/>
+						<exclude name="META-INF/*.RSA"/>
+					    </patternset>
+					</unjar>
+                
+					<delete file="@{jar}" failonerror="true"/>                
+					<!-- Touch it in case the file didn't have a manifest.
+					Otherwise the JAR task below will fail if the manifest 
+					file doesn't exist. -->
+					<mkdir dir="${temp.file}/META-INF"/>
+					<touch file="${temp.file}/META-INF/MANIFEST.MF"/>                
+					<jar destfile="@{jar}" basedir="${temp.file}"  includes="**"  manifest="${temp.file}/META-INF/MANIFEST.MF"/>                
+					<delete dir="${temp.file}" failonerror="true"/>
+				    </sequential>
+				</for>
+				
 				<!-- Replace the '.' in ${module.name} with '/' to get its path  -->
 				<tempfile property="temp.file"></tempfile>
 				<echo file="${temp.file}" message="${module.name}"></echo>
@@ -527,6 +555,24 @@
 		    </execution>
 		</executions>
 		<inherited>false</inherited>
+		<dependencies>
+		    <dependency>
+			<groupId>ant-contrib</groupId>
+			<artifactId>ant-contrib</artifactId>
+			<version>1.0b3</version>
+			<exclusions>
+			    <exclusion>
+				<groupId>ant</groupId>
+				<artifactId>ant</artifactId>
+			    </exclusion>
+			</exclusions>
+		    </dependency>
+		    <dependency>
+			<groupId>org.apache.ant</groupId>
+			<artifactId>ant-nodeps</artifactId>
+			<version>1.8.1</version>
+		    </dependency>
+		</dependencies>
 	    </plugin>
 	</plugins>
     </build>

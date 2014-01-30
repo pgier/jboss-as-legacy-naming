@@ -32,7 +32,7 @@
     <packaging>jar</packaging>
     <name>JBoss Application Server Legacy Naming : JNP</name>
     <properties>
-	<module.name>org.jboss.legacy.naming.jnp</module.name>
+	<module.name>org.jboss.legacy.jnp</module.name>
     </properties>
     <dependencies>
 	<dependency>      
