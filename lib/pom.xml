@@ -60,27 +60,7 @@
 	<dependency>
 	    <groupId>org.jboss.as</groupId>
 	    <artifactId>jboss-as-clustering-registry</artifactId>
-	</dependency><!--
-	<dependency>
-	    <groupId>org.jboss.as</groupId>
-	    <artifactId>jboss-as-security</artifactId>
-	    <version>${version.jboss.as}</version>
-	    <scope>provided</scope>
-	    <exclusions>
-		<exclusion>
-		    <groupId>org.jboss.as</groupId>
-		    <artifactId>jboss-as-naming</artifactId>
-		</exclusion>
-		<exclusion>
-		    <artifactId>jboss-as-clustering-infinispan</artifactId>
-		    <groupId>org.jboss.as</groupId>
-		</exclusion>
-		<exclusion>
-		    <groupId>org.jboss</groupId>
-		    <artifactId>jboss-ejb-client</artifactId>
-		</exclusion>
-	    </exclusions>
-	</dependency>-->
+	</dependency>
 	<dependency>
 	    <groupId>org.jboss.aspects</groupId>
 	    <artifactId>jboss-remoting-aspects</artifactId>
@@ -92,10 +72,6 @@
 	<dependency>
 	    <groupId>org.jboss.classfilewriter</groupId>
 	    <artifactId>jboss-classfilewriter</artifactId>
-	</dependency>
-	<dependency>
-	    <groupId>org.jboss</groupId>
-	    <artifactId>jboss-iiop-client</artifactId>
 	</dependency>
 	<dependency>
 	    <groupId>org.jboss.logging</groupId>
@@ -237,14 +213,6 @@
 				    <destFileName>jboss-common-core.jar</destFileName>
 				</artifactItem>
 				<artifactItem>
-				    <groupId>org.jboss</groupId>
-				    <artifactId>jboss-iiop-client</artifactId>
-				    <type>jar</type>
-				    <overWrite>true</overWrite>
-				    <outputDirectory>${directory.dependencies}</outputDirectory>
-				    <destFileName>jboss-iiop-client.jar</destFileName>
-				</artifactItem>
-				<artifactItem>
 				    <groupId>org.jboss.aop</groupId>
 				    <artifactId>jboss-aop</artifactId>
 				    <type>jar</type>
@@ -364,15 +332,6 @@
 				    <outputDirectory>${directory.dependencies}</outputDirectory>
 				    <destFileName>jbosssx.jar</destFileName>
 				</artifactItem>
-				<!--
-				<artifactItem>
-				    <groupId>org.jboss.spec.javax.jms</groupId>
-				    <artifactId>jboss-jms-api_1.1_spec</artifactId>
-				    <type>jar</type>
-				    <overWrite>true</overWrite>
-				    <outputDirectory>${directory.dependencies}</outputDirectory>
-				    <destFileName>jboss-jms-api_1.1_spec.jar</destFileName>
-				</artifactItem>-->
 				<artifactItem>
 				    <groupId>oswego-concurrent</groupId>
 				    <artifactId>concurrent</artifactId>
