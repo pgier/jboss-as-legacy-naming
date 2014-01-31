@@ -70,10 +70,6 @@
 	    <artifactId>jboss-common-core</artifactId>
 	</dependency>
 	<dependency>
-	    <groupId>org.jboss.classfilewriter</groupId>
-	    <artifactId>jboss-classfilewriter</artifactId>
-	</dependency>
-	<dependency>
 	    <groupId>org.jboss.logging</groupId>
 	    <artifactId>jboss-logging</artifactId>
 	</dependency>
@@ -94,14 +90,6 @@
 	<dependency>
 	    <groupId>org.jboss.metadata</groupId>
 	    <artifactId>jboss-metadata</artifactId>
-	</dependency>
-	<dependency>
-	    <groupId>org.jboss.marshalling</groupId>
-	    <artifactId>jboss-marshalling</artifactId>
-	</dependency>
-	<dependency>
-	    <groupId>org.jboss.marshalling</groupId>
-	    <artifactId>jboss-marshalling-river</artifactId>
 	</dependency>
 	<dependency>
 	    <groupId>org.jboss.spec.javax.jms</groupId>
@@ -229,14 +217,6 @@
 				    <destFileName>jboss-remoting-aspects.jar</destFileName>
 				</artifactItem>
 				<artifactItem>
-				    <groupId>org.jboss.classfilewriter</groupId>
-				    <artifactId>jboss-classfilewriter</artifactId>
-				    <type>jar</type>
-				    <overWrite>true</overWrite>
-				    <outputDirectory>${directory.dependencies}</outputDirectory>
-				    <destFileName>jboss-classfilewriter.jar</destFileName>
-				</artifactItem>
-				<artifactItem>
 				    <groupId>org.jboss.logging</groupId>
 				    <artifactId>jboss-logging-log4j</artifactId>
 				    <type>jar</type>
@@ -259,22 +239,6 @@
 				    <overWrite>true</overWrite>
 				    <outputDirectory>${directory.dependencies}</outputDirectory>
 				    <destFileName>jboss-logging-spi.jar</destFileName>
-				</artifactItem>
-				<artifactItem>
-				    <groupId>org.jboss.marshalling</groupId>
-				    <artifactId>jboss-marshalling</artifactId>
-				    <type>jar</type>
-				    <overWrite>true</overWrite>
-				    <outputDirectory>${directory.dependencies}</outputDirectory>
-				    <destFileName>jboss-marshalling.jar</destFileName>
-				</artifactItem>
-				<artifactItem>
-				    <groupId>org.jboss.marshalling</groupId>
-				    <artifactId>jboss-marshalling-river</artifactId>
-				    <type>jar</type>
-				    <overWrite>true</overWrite>
-				    <outputDirectory>${directory.dependencies}</outputDirectory>
-				    <destFileName>jboss-marshalling-river.jar</destFileName>
 				</artifactItem>
 				<artifactItem>
 				    <groupId>org.jboss</groupId>

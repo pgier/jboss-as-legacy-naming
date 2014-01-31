@@ -2,12 +2,9 @@
     <resources>
 	<resource-root path="lib/concurrent.jar"/>
 	<resource-root path="lib/jboss-common-core.jar"/>
-	<resource-root path="lib/jboss-marshalling-river.jar"/>
 	<resource-root path="lib/jboss-security-spi.jar"/>
 	<resource-root path="lib/jboss-logging-processor.jar"/>
 	<resource-root path="lib/jbosssx.jar"/>
-	<resource-root path="lib/jboss-marshalling.jar"/>     
-        <resource-root path="lib/jboss-classfilewriter.jar"/>
         <resource-root path="lib/javassist.jar"/>        
 	<resource-root path="lib/jboss-mdr.jar"/>
 	<resource-root path="lib/jboss-metadata.jar"/>
@@ -46,6 +43,9 @@
 	<module name="org.jboss.msc"/>
 	<module name="org.infinispan"/>
 	<module name="org.jboss.vfs"/>
+	<module name="org.jboss.classfilewriter" />
+        <module name="org.jboss.marshalling.river" />
+        <module name="org.jboss.marshalling" />
 	<module name="org.apache.commons.logging" />
 	<module name="org.jboss.legacy.library" optional="true" export="true" />
 	<module name="javax.api"/>

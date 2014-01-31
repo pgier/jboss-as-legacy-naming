@@ -63,10 +63,8 @@
 	<version.org.jboss.aspects.currentinvocation>1.0.1</version.org.jboss.aspects.currentinvocation>
 	<version.jboss.aspects.remoting.legacy>1.0.3</version.jboss.aspects.remoting.legacy>
 	<version.oswego-concurrent.concurrent>1.3.4-jboss-update1</version.oswego-concurrent.concurrent>
-	<version.javassist>3.12.0.SP1</version.javassist>	    
-	<version.jboss.marshalling.legacy>1.4.3.Final-redhat-1</version.jboss.marshalling.legacy>
+	<version.javassist>3.12.0.SP1</version.javassist>
 	<version.jboss.commons.core.legacy>2.2.17.GA-redhat-2</version.jboss.commons.core.legacy>
-	<version.jboss.classfilewriter.legacy>1.0.3.Final-redhat-1</version.jboss.classfilewriter.legacy>
 	<version.jboss.logging.processor.legacy>1.1.0.Final</version.jboss.logging.processor.legacy>
 	<version.jboss.logging.log4j.legacy>2.1.2.GA</version.jboss.logging.log4j.legacy>
 	<version.jboss.logging.spi.legacy>2.1.2.GA</version.jboss.logging.spi.legacy>
@@ -766,16 +764,6 @@
 		</exclusions>
 	    </dependency>
 	    <dependency>
-		<groupId>org.jboss.marshalling</groupId>
-		<artifactId>jboss-marshalling</artifactId>
-		<version>${version.jboss.marshalling.legacy}</version>
-	    </dependency>
-	    <dependency>
-		<groupId>org.jboss.marshalling</groupId>
-		<artifactId>jboss-marshalling-river</artifactId>
-		<version>${version.jboss.marshalling.legacy}</version>
-	    </dependency>
-	    <dependency>
 		<groupId>org.jboss.jbossas</groupId>
 		<artifactId>jboss-as-jmx</artifactId>
 		<version>${version.jboss.as.legacy}</version>
@@ -937,31 +925,10 @@
 		    </exclusion>
 		</exclusions>
 	    </dependency>
-	    <!--<dependency>
-		<groupId>org.jboss.as</groupId>
-		<artifactId>jboss-as-security</artifactId>
-		<version>${version.jboss.as}</version>
-		<scope>provided</scope>
-		<exclusions>
-		    <exclusion>
-			<groupId>org.jboss.as</groupId>
-			<artifactId>jboss-as-naming</artifactId>
-		    </exclusion>
-		    <exclusion>
-			<artifactId>jboss-as-clustering-infinispan</artifactId>
-			<groupId>org.jboss.as</groupId>
-		    </exclusion>
-		</exclusions>
-	    </dependency>-->
 	    <dependency>
 		<groupId>org.jboss</groupId>
 		<artifactId>jboss-common-core</artifactId>
 		<version>${version.jboss.commons.core.legacy}</version>
-	    </dependency>
-	    <dependency>
-		<groupId>org.jboss.classfilewriter</groupId>
-		<artifactId>jboss-classfilewriter</artifactId>
-		<version>${version.jboss.classfilewriter.legacy}</version>
 	    </dependency>
 	    <dependency>
 		<groupId>org.jboss</groupId>
