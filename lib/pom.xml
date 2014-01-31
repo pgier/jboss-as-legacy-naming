@@ -340,14 +340,6 @@
 				    <outputDirectory>${directory.dependencies}</outputDirectory>
 				    <destFileName>concurrent.jar</destFileName>
 				</artifactItem>
-				<artifactItem>
-				    <groupId>trove</groupId>
-				    <artifactId>trove</artifactId>
-				    <type>jar</type>
-				    <overWrite>true</overWrite>
-				    <outputDirectory>${directory.dependencies}</outputDirectory>
-				    <destFileName>trove.jar</destFileName>
-				</artifactItem>
 				<!-- HA -->
 				<artifactItem>
 				    <groupId>org.infinispan</groupId>

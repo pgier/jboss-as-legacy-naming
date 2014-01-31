@@ -16,7 +16,6 @@
 	<resource-root path="lib/jboss-aop.jar"/>
 	<resource-root path="lib/jboss-logging-log4j.jar"/>
 	<resource-root path="lib/jboss-logging-spi.jar"/>
-	<resource-root path="lib/trove.jar"/>
 	<resource-root path="lib/jnpserver.jar"/>
 
 	<!-- HA -->
@@ -33,7 +32,6 @@
 	<resource-root path="lib/jboss-dependency.jar"/>
 	<resource-root path="lib/jboss-as-security.jar"/>
         <resource-root path="lib/jboss-as-server.jar"/>
-	
     </resources>
 
     <dependencies>

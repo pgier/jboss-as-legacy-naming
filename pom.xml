@@ -72,7 +72,6 @@
 	<version.jboss.logging.spi.legacy>2.1.2.GA</version.jboss.logging.spi.legacy>
 	<version.jboss.mdr.legacy>2.0.3.GA</version.jboss.mdr.legacy>
 	<version.jboss.naming.jnpserver.legacy>5.0.3.GA_CP02</version.jboss.naming.jnpserver.legacy>
-	<version.trove.legacy>1.0.2</version.trove.legacy>
 	<version.junit>4.11</version.junit>
 	<version.org.mockito>1.9.5</version.org.mockito>
 	<version.plugin.maven.assembly>2.8</version.plugin.maven.assembly>
@@ -921,11 +920,6 @@
 		<groupId>org.jgroups</groupId>
 		<artifactId>jgroups</artifactId>
 		<version>${version.org.jgroups.jgroups}</version>
-	    </dependency>	    
-	    <dependency>
-		<groupId>trove</groupId>
-		<artifactId>trove</artifactId>
-		<version>${version.trove.legacy}</version>
 	    </dependency>
 	    <dependency>
 		<groupId>javassist</groupId>
