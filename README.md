@@ -21,7 +21,6 @@ Full configuration example:
     <subsystem xmlns="urn:jboss:doma:in:legacy-jnp:1.0">  
       <jnp-server/>  
       <jnp-connector socket-binding="jnp" rmi-socket-binding="rmi-jnp" />  
-      <remoting socket-binding="legacy-remoting"/>  
       <distributed-cache cache-container="singleton" cache-ref="default" />  
     </subsystem>  
     <subsystem xmlns="urn:jboss:domain:infinispan:1.4">  
@@ -38,7 +37,6 @@ Full configuration example:
       ...  
       <socket-binding name="jnp" port="5599" interface="jnp"/>  
       <socket-binding name="rmi-jnp" port="1099" interface="jnp"/>  
-      <socket-binding name="legacy-remoting" port="4873"/>  
       ...  
     </socket-binding-group>  
     

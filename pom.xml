@@ -76,7 +76,6 @@
     </properties>
     
     <modules>
-	<module>lib</module>
 	<module>jnp</module>
     </modules>
     
@@ -1148,7 +1147,7 @@
 			    <goal>enforce</goal>
 			</goals>
 			<configuration>
-			    <skip>true</skip>
+			    <skip>false</skip>
 			    <rules>
 				<bannedDependencies>
 				    <searchTransitive>true</searchTransitive>

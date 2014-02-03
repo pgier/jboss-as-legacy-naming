@@ -11,7 +11,7 @@ if [ "x$JBOSS_HOME" = "x" ]; then
     return 1
 fi
 
-cp -Rf lib/target/module/org $JBOSS_HOME/modules/system/layers/base/
+#cp -Rf lib/target/module/org $JBOSS_HOME/modules/system/layers/base/
 cp -Rf jnp/target/module/org $JBOSS_HOME/modules/system/layers/base/
 
 
@@ -25,7 +25,7 @@ echo "2. Add sdubsystem definition"
 echo "<subsystem xmlns=\"urn:jboss:domain:legacy-jnp:1.0\">"
 echo "    <jnp-server/>"
 echo "    <jnp-connector socket-binding=\"jnp\" rmi-socket-binding=\"rmi-jnp\" />"
-echo "    <remoting socket-binding=\"legacy-remoting\"/>"
+#echo "    <remoting socket-binding=\"legacy-remoting\"/>"
 echo "</subsystem>"
 echo
 echo "3. Define a socket-binding for the JNP Server using the 'jnp' name"
@@ -34,9 +34,9 @@ echo
 echo "4. You can also define a RMI binding socket using the 'rmi-jnp' name (Optionnal if you don't have declared it in the jnp-connector)"
 echo "<socket-binding name=\"rmi-jnp\" port=\"1099\"/>"
 echo
-echo "5. Define a socket-binding for the remoting using the 'legacy-remoting' name"
-echo "<socket-binding name=\"legacy-remoting\" port=\"4873\"/>"
-echo
+#echo "5. Define a socket-binding for the remoting using the 'legacy-remoting' name"
+#echo "<socket-binding name=\"legacy-remoting\" port=\"4873\"/>"
+#echo
 echo "5. If you want to configure a HA JNDI JNP Server, you can add :"
 echo "<distributed-cache cache-ref=\"default\" cache-container=\"singleton\"/>"
 echo
