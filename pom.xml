@@ -694,6 +694,10 @@
 			<artifactId>jboss-vfs</artifactId>
 			<groupId>org.jboss</groupId>
 		    </exclusion>
+                    <exclusion>
+			<artifactId>jboss-aop</artifactId>
+			<groupId>org.jboss.aop</groupId>
+		    </exclusion>
 		</exclusions>
 	    </dependency>
 	    <dependency>
@@ -837,6 +841,10 @@
 			<artifactId>jboss-deployers-vfs</artifactId>
 			<groupId>org.jboss.deployers</groupId>
 		    </exclusion>
+                    <exclusion>
+			<artifactId>xml-apis</artifactId>
+			<groupId>apache-xerces</groupId>
+		    </exclusion>
 		</exclusions>
 	    </dependency>
 	    <dependency>
@@ -851,6 +859,10 @@
 		    <exclusion>
 			<artifactId>jboss-classloading-spi</artifactId>
 			<groupId>org.jboss.integration</groupId>
+		    </exclusion>
+                    <exclusion>
+			<artifactId>xml-apis</artifactId>
+			<groupId>apache-xerces</groupId>
 		    </exclusion>
 		</exclusions>
 	    </dependency>

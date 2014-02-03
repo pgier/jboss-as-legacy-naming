@@ -4,13 +4,7 @@
 	<resource-root path="lib/jboss-common-core.jar"/>
 	<resource-root path="lib/jboss-security-spi.jar"/>
 	<resource-root path="lib/jboss-logging-processor.jar"/>
-	<resource-root path="lib/jbosssx.jar"/>
-        <resource-root path="lib/javassist.jar"/>        
-	<resource-root path="lib/jboss-mdr.jar"/>
-	<resource-root path="lib/jboss-metadata.jar"/>
-	<resource-root path="lib/jboss-remoting-aspects.jar"/>
 	<resource-root path="lib/jboss-remoting.jar"/>
-	<resource-root path="lib/jboss-aop.jar"/>
 	<resource-root path="lib/jboss-logging-log4j.jar"/>
 	<resource-root path="lib/jboss-logging-spi.jar"/>
 	<resource-root path="lib/jnpserver.jar"/>

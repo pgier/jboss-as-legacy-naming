@@ -37,14 +37,6 @@
     </properties>
     <dependencies>
 	<dependency>
-	    <groupId>org.jboss.security</groupId>
-	    <artifactId>jbosssx-client</artifactId>
-	</dependency>
-	<dependency>
-	    <groupId>org.jboss.aop</groupId>
-	    <artifactId>jboss-aop</artifactId>
-	</dependency>
-	<dependency>
 	    <groupId>oswego-concurrent</groupId>
 	    <artifactId>concurrent</artifactId>
 	    <scope>runtime</scope>
@@ -62,10 +54,6 @@
 	    <artifactId>jboss-as-clustering-registry</artifactId>
 	</dependency>
 	<dependency>
-	    <groupId>org.jboss.aspects</groupId>
-	    <artifactId>jboss-remoting-aspects</artifactId>
-	</dependency>
-	<dependency>
 	    <groupId>org.jboss</groupId>
 	    <artifactId>jboss-common-core</artifactId>
 	</dependency>
@@ -81,15 +69,7 @@
 	</dependency>
 	<dependency>
 	    <groupId>org.jboss.security</groupId>
-	    <artifactId>jbosssx</artifactId>
-	</dependency>
-	<dependency>
-	    <groupId>org.jboss.security</groupId>
 	    <artifactId>jboss-security-spi</artifactId>
-	</dependency>
-	<dependency>
-	    <groupId>org.jboss.metadata</groupId>
-	    <artifactId>jboss-metadata</artifactId>
 	</dependency>
 	<dependency>
 	    <groupId>org.jboss.spec.javax.jms</groupId>
@@ -185,36 +165,12 @@
 			<configuration>
 			    <artifactItems>
 				<artifactItem>
-				    <groupId>javassist</groupId>
-				    <artifactId>javassist</artifactId>
-				    <type>jar</type>
-				    <overWrite>true</overWrite>
-				    <outputDirectory>${directory.dependencies}</outputDirectory>
-				    <destFileName>javassist.jar</destFileName>
-				</artifactItem>
-				<artifactItem>
 				    <groupId>org.jboss</groupId>
 				    <artifactId>jboss-common-core</artifactId>
 				    <type>jar</type>
 				    <overWrite>true</overWrite>
 				    <outputDirectory>${directory.dependencies}</outputDirectory>
 				    <destFileName>jboss-common-core.jar</destFileName>
-				</artifactItem>
-				<artifactItem>
-				    <groupId>org.jboss.aop</groupId>
-				    <artifactId>jboss-aop</artifactId>
-				    <type>jar</type>
-				    <overWrite>true</overWrite>
-				    <outputDirectory>${directory.dependencies}</outputDirectory>
-				    <destFileName>jboss-aop.jar</destFileName>
-				</artifactItem>
-				<artifactItem>
-				    <groupId>org.jboss.aspects</groupId>
-				    <artifactId>jboss-remoting-aspects</artifactId>
-				    <type>jar</type>
-				    <overWrite>true</overWrite>
-				    <outputDirectory>${directory.dependencies}</outputDirectory>
-				    <destFileName>jboss-remoting-aspects.jar</destFileName>
 				</artifactItem>
 				<artifactItem>
 				    <groupId>org.jboss.logging</groupId>
@@ -239,22 +195,6 @@
 				    <overWrite>true</overWrite>
 				    <outputDirectory>${directory.dependencies}</outputDirectory>
 				    <destFileName>jboss-logging-spi.jar</destFileName>
-				</artifactItem>
-				<artifactItem>
-				    <groupId>org.jboss</groupId>
-				    <artifactId>jboss-mdr</artifactId>
-				    <type>jar</type>
-				    <overWrite>true</overWrite>
-				    <outputDirectory>${directory.dependencies}</outputDirectory>
-				    <destFileName>jboss-mdr.jar</destFileName>
-				</artifactItem>
-				<artifactItem>
-				    <groupId>org.jboss.metadata</groupId>
-				    <artifactId>jboss-metadata</artifactId>
-				    <type>jar</type>
-				    <overWrite>true</overWrite>
-				    <outputDirectory>${directory.dependencies}</outputDirectory>
-				    <destFileName>jboss-metadata.jar</destFileName>
 				</artifactItem>
 				<artifactItem>
 				    <groupId>org.jboss.naming</groupId>
@@ -287,14 +227,6 @@
 				    <overWrite>true</overWrite>
 				    <outputDirectory>${directory.dependencies}</outputDirectory>
 				    <destFileName>jboss-security-spi.jar</destFileName>
-				</artifactItem>
-				<artifactItem>
-				    <groupId>org.jboss.security</groupId>
-				    <artifactId>jbosssx</artifactId>
-				    <type>jar</type>
-				    <overWrite>true</overWrite>
-				    <outputDirectory>${directory.dependencies}</outputDirectory>
-				    <destFileName>jbosssx.jar</destFileName>
 				</artifactItem>
 				<artifactItem>
 				    <groupId>oswego-concurrent</groupId>

@@ -39,8 +39,6 @@ import org.jboss.legacy.jnp.connector.JNPServerConnectorModel;
 import org.jboss.legacy.jnp.connector.JNPServerConnectorResourceDefinition;
 import org.jboss.legacy.jnp.infinispan.DistributedTreeManagerModel;
 import org.jboss.legacy.jnp.infinispan.DistributedTreeManagerResourceDefinition;
-import org.jboss.legacy.jnp.remoting.RemotingModel;
-import org.jboss.legacy.jnp.remoting.RemotingResourceDefinition;
 import org.jboss.legacy.jnp.server.JNPServerModel;
 import org.jboss.legacy.jnp.server.JNPServerResourceDefinition;
 import org.jboss.staxmapper.XMLElementReader;
@@ -76,10 +74,6 @@ public class JNPSubsystem10Parser implements XMLElementReader<List<ModelNode>> {
         final ModelNode distributedTreManagerServiceAddOperation = Util.createAddOperation();
         distributedTreManagerServiceAddOperation.get(OP_ADDR).add(SUBSYSTEM, JNPExtension.SUBSYSTEM_NAME).add(SERVICE, DistributedTreeManagerModel.SERVICE_NAME);
 
-        final ModelNode remotingServiceAddOperation = Util.createAddOperation();
-        remotingServiceAddOperation.get(OP_ADDR).add(SUBSYSTEM, JNPExtension.SUBSYSTEM_NAME).add(SERVICE, RemotingModel.SERVICE_NAME);
-        result.add(remotingServiceAddOperation);
-
         // elements
         final EnumSet<JNPSubsystemXMLElement> encountered = EnumSet.noneOf(JNPSubsystemXMLElement.class);
         while (xmlExtendedStreamReader.hasNext() && xmlExtendedStreamReader.nextTag() != XMLStreamConstants.END_ELEMENT) {
@@ -97,9 +91,6 @@ public class JNPSubsystem10Parser implements XMLElementReader<List<ModelNode>> {
                     break;
                 case JNP_SERVER:
                     this.parseJNPServer(xmlExtendedStreamReader, jnpServerServiceAddOperation);
-                    break;
-                case REMOTING:
-                    this.parseRemoting(xmlExtendedStreamReader, remotingServiceAddOperation);
                     break;
                 case DISTRIBUTED_CACHE:
                     this.parseDistributedCache(xmlExtendedStreamReader, distributedTreManagerServiceAddOperation, jnpServerConnectorServiceAddOperation);
@@ -139,24 +130,6 @@ public class JNPSubsystem10Parser implements XMLElementReader<List<ModelNode>> {
         }
         requireNoContent(xmlExtendedStreamReader);
 
-    }
-
-    private void parseRemoting(XMLExtendedStreamReader xmlExtendedStreamReader, ModelNode remotingServiceAddOperation) throws XMLStreamException {
-        for (int i = 0; i < xmlExtendedStreamReader.getAttributeCount(); i++) {
-            requireNoNamespaceAttribute(xmlExtendedStreamReader, i);
-            final String value = xmlExtendedStreamReader.getAttributeValue(i);
-            switch (JNPSubsystemXMLAttribute.forName(xmlExtendedStreamReader.getAttributeLocalName(i))) {
-                case SOCKET_BINDING:
-                    RemotingResourceDefinition.SOCKET_BINDING.parseAndSetParameter(value, remotingServiceAddOperation,
-                            xmlExtendedStreamReader);
-                    break;
-                case UNKNOWN:
-                default: {
-                    throw unexpectedAttribute(xmlExtendedStreamReader, i);
-                }
-            }
-        }
-        requireNoContent(xmlExtendedStreamReader);
     }
 
     private boolean parseDistributedCache(XMLExtendedStreamReader xmlExtendedStreamReader, ModelNode distributedTreManagerServiceAddOperation,
