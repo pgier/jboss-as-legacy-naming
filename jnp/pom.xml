@@ -37,17 +37,22 @@
     </properties>
     <dependencies>
         <dependency>
+            <groupId>oswego-concurrent</groupId>
+            <artifactId>concurrent</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-tree</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>infinispan-core</artifactId>
+                    <groupId>org.infinispan</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.jboss.as</groupId>
             <artifactId>jboss-as-clustering-impl</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.as</groupId>
-            <artifactId>jboss-as-naming</artifactId>            
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -58,6 +63,24 @@
                 <exclusion>
                     <groupId>org.jboss.logging</groupId>
                     <artifactId>jboss-logging-spi</artifactId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>jgroups</artifactId>
+                    <groupId>jgroups</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>jboss-metadata</artifactId>
+                    <groupId>org.jboss.metadata</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.cluster</groupId>
+            <artifactId>jboss-ha-client</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>jboss-transaction-spi</artifactId>
+                    <groupId>org.jboss.integration</groupId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -73,11 +96,40 @@
         <!-- work-around for transitive dependency of org.jboss.jbossas:jboss-as-cluster -->
         <dependency>
             <groupId>org.jboss.jbossas</groupId>
+            <artifactId>jboss-as-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.jbossas</groupId>
+            <artifactId>jboss-as-system</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.jbossas</groupId>
             <artifactId>jboss-as-system-jmx</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.jboss.security</groupId>
+            <artifactId>jboss-security-spi</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.microcontainer</groupId>
+            <artifactId>jboss-kernel</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.microcontainer</groupId>
+            <artifactId>jboss-dependency</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.as</groupId>
+            <artifactId>jboss-as-naming</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.remoting</groupId>
+            <artifactId>jboss-remoting</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.jboss.naming</groupId>
-            <artifactId>jnpserver</artifactId>            
+            <artifactId>jnpserver</artifactId>
             <!-- maven sucks -->
             <exclusions>
                 <exclusion>
@@ -104,6 +156,9 @@
                         </goals>
                         <configuration>
                             <includeScope>runtime</includeScope>
+                            <stripVersion>true</stripVersion>
+                            <stripClassifier>true</stripClassifier>
+                            <excludeGroupIds>org.jgroups</excludeGroupIds>
                         </configuration>
                     </execution>
                     <execution>
@@ -115,6 +170,8 @@
                         </goals>
                         <configuration>
                             <includeScope>system</includeScope>
+                            <stripVersion>true</stripVersion>
+                            <stripClassifier>true</stripClassifier>
                             <excludeGroupIds>com.sun</excludeGroupIds>
                         </configuration>
                     </execution>
@@ -142,7 +199,7 @@
                                         <tempfile prefix="usignjar-" destdir="${java.io.tmpdir}" property="temp.file"/>
                                         <echo message="Removing signatures from JAR: @{jar}"/>
                                         <mkdir dir="${temp.file}"/>
-                
+
                                         <unjar src="@{jar}" dest="${temp.file}">
                                             <patternset>
                                                 <include name="**"/>
@@ -151,18 +208,18 @@
                                                 <exclude name="META-INF/*.RSA"/>
                                             </patternset>
                                         </unjar>
-                
-                                        <delete file="@{jar}" failonerror="true"/>                
+
+                                        <delete file="@{jar}" failonerror="true"/>
                                         <!-- Touch it in case the file didn't have a manifest.
-                                        Otherwise the JAR task below will fail if the manifest 
+                                        Otherwise the JAR task below will fail if the manifest
                                         file doesn't exist. -->
                                         <mkdir dir="${temp.file}/META-INF"/>
-                                        <touch file="${temp.file}/META-INF/MANIFEST.MF"/>                
-                                        <jar destfile="@{jar}" basedir="${temp.file}"  includes="**"  manifest="${temp.file}/META-INF/MANIFEST.MF"/>                
+                                        <touch file="${temp.file}/META-INF/MANIFEST.MF"/>
+                                        <jar destfile="@{jar}" basedir="${temp.file}"  includes="**"  manifest="${temp.file}/META-INF/MANIFEST.MF"/>
                                         <delete dir="${temp.file}" failonerror="true"/>
                                     </sequential>
                                 </for>
-                                
+
                                 <!-- Replace the '.' in ${module.name} with '/' to get its path  -->
                                 <tempfile property="temp.file"></tempfile>
                                 <echo file="${temp.file}" message="${module.name}"></echo>

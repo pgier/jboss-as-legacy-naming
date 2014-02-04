@@ -1,30 +1,25 @@
 <module xmlns="urn:jboss:module:1.0" name="org.jboss.legacy.jnp">
     <resources>
         <resource-root path="jboss-as-legacy-naming-jnp.jar"/>
-        
-        <resource-root path="lib/concurrent.jar"/>
-        <resource-root path="lib/jboss-common-core.jar"/>
-        <resource-root path="lib/jboss-security-spi.jar"/>
-        <resource-root path="lib/jboss-logging-processor.jar"/>
-        <resource-root path="lib/jboss-remoting.jar"/>
-        <resource-root path="lib/jboss-logging-log4j.jar"/>
-        <resource-root path="lib/jboss-logging-spi.jar"/>
-        <resource-root path="lib/jnpserver.jar"/>
 
-        <!-- HA -->
+        <resource-root path="lib/concurrent.jar"/>
+        <resource-root path="lib/infinispan-tree.jar"/>
+        <resource-root path="lib/jboss-as-cluster.jar"/>
+        <resource-root path="lib/jboss-as-j2se.jar"/>
+        <resource-root path="lib/jboss-as-server.jar"/>
+        <resource-root path="lib/jboss-as-system-jmx.jar"/>
+        <resource-root path="lib/jboss-as-system.jar"/>
+        <resource-root path="lib/jboss-common-core.jar"/>
+        <resource-root path="lib/jboss-dependency.jar"/>
         <resource-root path="lib/jboss-ha-client.jar"/>
         <resource-root path="lib/jboss-ha-server-api.jar"/>
         <resource-root path="lib/jboss-ha-server-cache-spi.jar"/>
-        <resource-root path="lib/jboss-ha-server-cache-jbc.jar"/>
-        <resource-root path="lib/jboss-as-cluster.jar"/>
-        <resource-root path="lib/jboss-as-system.jar"/>
-        <resource-root path="lib/jboss-as-system-jmx.jar"/>
         <resource-root path="lib/jboss-kernel.jar"/>
-        <resource-root path="lib/jboss-as-j2se.jar"/>
-        <resource-root path="lib/infinispan-tree.jar"/>
-        <resource-root path="lib/jboss-dependency.jar"/>
-        <resource-root path="lib/jboss-as-security.jar"/>
-        <resource-root path="lib/jboss-as-server.jar"/>
+        <resource-root path="lib/jboss-logging.jar"/>
+        <resource-root path="lib/jboss-remoting.jar"/>
+        <resource-root path="lib/jboss-security-spi.jar"/>
+        <resource-root path="lib/jnpserver.jar"/>
+
     </resources>
 
     <dependencies>
@@ -36,12 +31,11 @@
         <module name="org.jboss.as.naming"/>
         <module name="org.jboss.as.network" />
         <module name="org.jboss.as.transactions"/>
-        <module name="org.jboss.invocation"/>        
+        <module name="org.jboss.invocation"/>
         <module name="org.jboss.as.ee"/>
         <module name="org.jboss.as.server"/>
         <module name="org.jboss.modules"/>
         <module name="org.jboss.msc"/>
-        <module name="org.infinispan"/>
         <module name="org.jboss.vfs"/>
         <module name="org.jboss.classfilewriter" />
         <module name="org.jboss.marshalling.river" />
@@ -53,6 +47,5 @@
         <module name="org.jboss.as.clustering.infinispan"/>
         <module name="org.jboss.as.clustering.service" />
         <module name="javax.api"/>
-        
     </dependencies>
 </module>
