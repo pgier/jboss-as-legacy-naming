@@ -81,6 +81,20 @@
     
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.jboss.as</groupId>
+                <artifactId>jboss-as-parent</artifactId>
+                <version>7.3.0.Final-redhat-14</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.jbossas</groupId>
+                <artifactId>jboss-as-component-matrix</artifactId>
+                <version>5.2.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <!-- this has to be defined, otherwise maven fallbaks to 3.0.0.GA, even thought 5.0.2.GA is in dep tree -->
             <dependency>
                 <groupId>org.jboss.javaee</groupId>
