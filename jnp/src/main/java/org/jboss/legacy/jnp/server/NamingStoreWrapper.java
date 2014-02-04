@@ -34,6 +34,7 @@ import org.jnp.interfaces.NamingContext;
 import org.jnp.server.SingletonNamingServer;
 
 /**
+ * Fallback to the NamingStore if the operation fails on this NamingServer.
  *
  * @author <a href="mailto:ehugonne@redhat.com">Emmanuel Hugonnet</a> (c) 2013 Red Hat, inc.
  */
