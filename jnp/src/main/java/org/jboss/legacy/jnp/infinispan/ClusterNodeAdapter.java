@@ -34,31 +34,31 @@ public class ClusterNodeAdapter implements ClusterNode {
     private final org.jboss.ha.framework.interfaces.ClusterNode node;
 
     public ClusterNodeAdapter(org.jboss.ha.framework.interfaces.ClusterNode node) {
-	this.node = node;
+        this.node = node;
     }
 
     @Override
     public String getName() {
-	return node.getName();
+        return node.getName();
     }
 
     @Override
     public InetAddress getIpAddress() {
-	return node.getIpAddress();
+        return node.getIpAddress();
     }
 
     @Override
     public int getPort() {
-	return node.getPort();
+        return node.getPort();
     }
 
     @Override
     public int compareTo(ClusterNode o) {
-	return getId(this).compareTo(getId(o));
+        return getId(this).compareTo(getId(o));
     }
 
     private String getId(ClusterNode node) {
-	IpAddress address = new IpAddress(node.getIpAddress(), node.getPort());
-	return address.getIpAddress().getHostAddress() + ":" + address.getPort();
+        IpAddress address = new IpAddress(node.getIpAddress(), node.getPort());
+        return address.getIpAddress().getHostAddress() + ":" + address.getPort();
     }
 }
