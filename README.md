@@ -1,17 +1,18 @@
 jboss-as-legacy-naming
 ======================
 
-Legacy Naming extension
+#Legacy Naming extension
 
 The full documentation is at https://mojo.redhat.com/docs/DOC-938349
 
 EAP5 used a different naming and remote protocols than EAP6. 
 Thus when you want to interact with EAP6 from an EAP5 client (or server) you are confronted with a lot of issues.
+
 One solution would be to upgrade your client to EAP6, but sometimes this is not as simple as it seems.
+
 For these cases we have developed a set of extensions for seamless integration of legacy clients with EAP6 and above.
 
-
-Full configuration example:
+#Full configuration example
 
     <extensions>  
     ...  
@@ -38,10 +39,16 @@ Full configuration example:
       <socket-binding name="jnp" port="5599" interface="jnp"/>  
       <socket-binding name="rmi-jnp" port="1099" interface="jnp"/>  
       ...  
-    </socket-binding-group>  
+    </socket-binding-group> 
     
-Build and Installation : 
-Define the environment variable for JBOSS_HOME pointing towards your EAP6 instalaltion.
-Run deploy.sh
-Define your configuration.
+#Build and Installation
 
+Download and install EAP 5.2.0 (at least) and EAP 6.2.1.
+
+Define the environment variable $EAP5_HOME pointing towards your EAP5 installation.
+
+Define the environment variable $JBOSS_HOME pointing towards your EAP6 installation.
+
+Run deploy.sh
+
+Define your configuration in the EAP6 server.
