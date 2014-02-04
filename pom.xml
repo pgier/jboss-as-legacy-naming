@@ -35,8 +35,7 @@
 
     <properties>
         <version.infinispan.infinispan-tree>5.2.7.Final</version.infinispan.infinispan-tree>
-        <!-- <eap5.home>${env.EAP5_HOME}</eap5.home>-->
-        <eap5.home>/home/ehsavoie/Applications/jboss-legacy/jboss-5.3/</eap5.home>
+        <eap5.home>${env.EAP5_HOME}</eap5.home>
     </properties>
 
     <modules>

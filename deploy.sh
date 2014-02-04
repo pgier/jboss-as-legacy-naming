@@ -1,6 +1,7 @@
 #!/bin/sh
 
-mvn clean install -Dmaven.repo.local=/home/ehsavoie/tmp/maven-local -Dcheckstyle.skip=true
+mvn clean install -Dcheckstyle.skip=true
+
 if [ "x$EAP5_HOME" = "x" ]; then
     # get the full path (without any relative bits)
     echo "Set ENV EAP5_HOME!"
