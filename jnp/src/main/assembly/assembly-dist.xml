@@ -30,7 +30,7 @@ MA 02110-1301  USA
     <includeBaseDirectory>false</includeBaseDirectory>
     <fileSets>
         <fileSet>
-            <directory>${project.basedir}/jnp/target/module</directory>
+            <directory>target/module</directory>
             <outputDirectory>modules/system/layers/base</outputDirectory>
             <includes>
                 <include>**/*.*</include>
@@ -40,7 +40,7 @@ MA 02110-1301  USA
     </fileSets>
     <files>
         <file>
-            <source>${project.basedir}/README.md</source>
+            <source>../README.md</source>
             <outputDirectory></outputDirectory>
         </file>
     </files>
