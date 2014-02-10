@@ -41,7 +41,7 @@ For these cases we have developed a set of extensions for seamless integration o
       ...  
     </socket-binding-group> 
     
-#Build and Installation
+#Build
 
 Download and install EAP 5.2.0 (at least) and EAP 6.2.1.
 
@@ -52,3 +52,10 @@ Define the environment variable $JBOSS_HOME pointing towards your EAP6 installat
 Run deploy.sh
 
 Define your configuration in the EAP6 server.
+
+#Installation
+Download the zip or tar.gz archive
+
+Unarchive it in the EAP6 installation directory.
+
+Define your configuration in the EAP6 server. 
