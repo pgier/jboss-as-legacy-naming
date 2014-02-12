@@ -60,6 +60,13 @@
                 <scope>import</scope>
             </dependency>
             <dependency>
+                <groupId>org.jboss.client</groupId>
+                <artifactId>jboss-client</artifactId>
+                <version>5.2.0</version>
+                <scope>system</scope>
+                <systemPath>${eap5.home}/client/jboss-client.jar</systemPath>
+            </dependency>
+            <dependency>
                 <groupId>org.infinispan</groupId>
                 <artifactId>infinispan-tree</artifactId>
                 <version>${version.infinispan.infinispan-tree}</version>

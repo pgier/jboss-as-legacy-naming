@@ -126,7 +126,6 @@
         <dependency>
             <groupId>org.jboss.client</groupId>
             <artifactId>jboss-client</artifactId>
-            <version>5.1.0.CR1</version>
         </dependency>
 
 
