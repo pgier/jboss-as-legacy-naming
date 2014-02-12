@@ -40,6 +40,7 @@
 
     <modules>
         <module>jnp</module>
+        <module>test</module>
     </modules>
 
     <dependencyManagement>
@@ -264,101 +265,6 @@
                         </fileset>
                     </filesets>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-enforcer-plugin</artifactId>
-                <version>${version.enforcer.plugin}</version>
-                <executions>
-                    <execution>
-                        <id>ban-bad-dependencies</id>
-                        <goals>
-                            <goal>enforce</goal>
-                        </goals>
-                        <configuration>
-                            <skip>false</skip>
-                            <rules>
-                                <bannedDependencies>
-                                    <searchTransitive>true</searchTransitive>
-                                    <excludes>
-                                        <exclude>args4j:args4j</exclude>
-                                        <exclude>biz.aQute:bnd</exclude>
-                                        <exclude>com.fasterxml:classmate</exclude>
-                                        <exclude>com.google.gwt.inject:gin</exclude>
-                                        <exclude>com.google.inject:guice</exclude>
-                                        <exclude>com.gwtplatform:gwtp-all</exclude>
-                                        <exclude>commons-httpclient:commons-httpclient</exclude>
-                                        <exclude>commons-logging:commons-logging</exclude>
-                                        <exclude>commons-logging:commons-logging-api</exclude>
-                                        <exclude>concurrent:concurrent</exclude>
-                                        <exclude>jacorb:jacorb</exclude>
-                                        <exclude>javassist:javassist</exclude>
-                                        <exclude>javax.persistence:persistence-api</exclude>
-                                        <exclude>javax.servlet:servlet-api</exclude>
-                                        <exclude>javax.transaction:jta</exclude>
-                                        <exclude>javax.xml:jaxrpc-api</exclude>
-                                        <exclude>javax.xml.soap:saaj-api</exclude>
-                                        <exclude>javax.xml.stream:stax-api</exclude>
-                                        <exclude>jboss:jboss-logging-spi</exclude>
-                                        <exclude>jboss:jboss-serialization</exclude>
-                                        <exclude>jboss.web:el-api</exclude>
-                                        <exclude>jboss.web:jsp-api</exclude>
-                                        <exclude>jboss.web:servlet-api</exclude>
-                                        <exclude>net.sf.kxml:kxml2</exclude>
-                                        <exclude>org.apache.geronimo.specs:geronimo-activation_1.1_spec</exclude>
-                                        <exclude>org.apache.geronimo.specs:geronimo-jaxb_2.1_spec</exclude>
-                                        <exclude>org.apache.geronimo.specs:geronimo-jaxr_1.0_spec</exclude>
-                                        <exclude>org.apache.geronimo.specs:geronimo-saaj_1.3_spec</exclude>
-                                        <exclude>org.apache.geronimo.specs:geronimo-stax-api_1.0_spec</exclude>
-                                        <exclude>org.apache.xalan:serializer</exclude>
-                                        <exclude>org.apache.xalan:xalan</exclude>
-                                        <exclude>org.hibernate:ejb3-persistence</exclude>
-                                        <exclude>org.hibernate.java-persistence:jpa-api</exclude>
-                                        <exclude>org.jboss.integration:jboss-jca-spi</exclude>
-                                        <exclude>org.jboss.interceptor:jboss-interceptor-api</exclude>
-                                        <exclude>org.jboss.javaee:jboss-javaee</exclude>
-                                        <exclude>org.jboss.javaee:jboss-ejb-api</exclude>
-                                        <exclude>org.jboss.javaee:jboss-ejb-api_3.1</exclude>
-                                        <exclude>org.jboss.javaee:jboss-jacc-api</exclude>
-                                        <exclude>org.jboss.javaee:jboss-jad-api</exclude>
-                                        <exclude>org.jboss.javaee:jboss-jaspi-api</exclude>
-                                        <exclude>org.jboss.javaee:jboss-jca-api</exclude>
-                                        <exclude>org.jboss.javaee:jboss-jms-api</exclude>
-                                        <exclude>org.jboss.javaee:servlet-api</exclude>
-                                        <exclude>org.jboss.javaee:jsp-api</exclude>
-                                        <exclude>org.jboss.javaee:jboss-transaction-api</exclude>
-                                        <exclude>org.jboss.logging:jboss-logging-generator</exclude>
-                                        <exclude>org.jboss.logging:jboss-logging-log4j</exclude>
-                                        <exclude>org.jboss.logging:jboss-logging-jdk</exclude>
-                                        <exclude>org.jboss.logging:jboss-logging-logmanager</exclude>
-                                        <exclude>org.jboss.logging:jboss-logging-spi</exclude>
-                                        <exclude>org.jboss.logging:jboss-logging-tools</exclude>
-                                        <!-- replaced by io.netty:netty -->
-                                        <exclude>org.jboss.netty:netty</exclude>
-                                        <exclude>org.jboss.security:jbosssx</exclude>
-                                        <exclude>org.jboss.slf4j:slf4j-jboss-logging</exclude>
-                                        <exclude>org.jboss.spec.javax.resource:jboss-connector-api_1.5_spec</exclude>
-                                        <exclude>org.ops4j.base</exclude>
-                                        <exclude>org.ops4j.pax.swissbox</exclude>
-                                        <exclude>org.ops4j.pax.web</exclude>
-                                        <exclude>org.slf4j:slf4j-nop</exclude>
-                                        <exclude>org.slf4j:slf4j-jdk14</exclude>
-                                        <exclude>org.slf4j:slf4j-log4j12</exclude>
-                                        <exclude>org.slf4j:slf4j-log4j13</exclude>
-                                        <exclude>oro:oro</exclude>
-                                        <exclude>relaxngDatatype:relaxngDatatype</exclude>
-                                        <exclude>stax:stax-api</exclude>
-                                        <exclude>sun-jaxb:jaxb-api</exclude>
-                                        <exclude>trove:trove</exclude>
-                                        <exclude>woodstox:wstx-lgpl</exclude>
-                                        <exclude>xml-apis:xml-apis</exclude>
-                                    </excludes>
-                                </bannedDependencies>
-                                <dependencyConvergence></dependencyConvergence>
-                            </rules>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
