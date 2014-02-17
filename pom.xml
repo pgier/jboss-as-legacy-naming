@@ -40,7 +40,6 @@
 
     <modules>
         <module>jnp</module>
-        <module>test</module>
     </modules>
 
     <dependencyManagement>
@@ -287,4 +286,18 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>ci</id>
+            <activation>
+                <property>
+                    <name>jnp.test</name>
+                </property>
+            </activation>
+            <modules>
+                <module>test</module>
+            </modules>
+        </profile>
+    </profiles>
 </project>
