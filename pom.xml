@@ -30,7 +30,7 @@
     </parent>
     <groupId>org.jboss.as.legacy</groupId>
     <artifactId>jboss-as-legacy-naming</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>JBoss Application Server Legacy : Naming</name>
 
@@ -47,7 +47,7 @@
         <connection>scm:git:git://github.com/jboss-set/jboss-as-legacy-naming.git</connection>
         <developerConnection>scm:git:git@github.com:jboss-set/jboss-as-legacy-naming.git</developerConnection>
         <url>https://github.com/jboss-set/jboss-as-legacy-naming</url>
-      <tag>jboss-as-legacy-naming-1.0.0</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <dependencyManagement>
