@@ -25,7 +25,7 @@
     <parent>
         <groupId>org.jboss.as.legacy</groupId>
         <artifactId>jboss-as-legacy-naming</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.0.0</version>
     </parent>
     <groupId>org.jboss.as.legacy.naming</groupId>
     <artifactId>jboss-as-legacy-naming-jnp</artifactId>
@@ -233,7 +233,7 @@
                                         <exclude>xml-apis:xml-apis</exclude>
                                     </excludes>
                                 </bannedDependencies>
-                                <dependencyConvergence></dependencyConvergence>
+                                <dependencyConvergence />
                             </rules>
                         </configuration>
                     </execution>
@@ -293,48 +293,48 @@
                                 <taskdef resource="net/sf/antcontrib/antlib.xml" classpathref="maven.plugin.classpath" />
                                 <for param="jar">
                                     <path>
-                                        <fileset dir="${project.build.directory}/dependency" includes="**/*.jar"/>
+                                        <fileset dir="${project.build.directory}/dependency" includes="**/*.jar" />
                                     </path>
                                     <sequential>
                                         <!-- Remove any existing signatures from a JAR file. -->
-                                        <tempfile prefix="usignjar-" destdir="${java.io.tmpdir}" property="temp.file"/>
-                                        <echo message="Removing signatures from JAR: @{jar}"/>
-                                        <mkdir dir="${temp.file}"/>
+                                        <tempfile prefix="usignjar-" destdir="${java.io.tmpdir}" property="temp.file" />
+                                        <echo message="Removing signatures from JAR: @{jar}" />
+                                        <mkdir dir="${temp.file}" />
 
                                         <unjar src="@{jar}" dest="${temp.file}">
                                             <patternset>
-                                                <include name="**"/>
-                                                <exclude name="META-INF/*.SF"/>
-                                                <exclude name="META-INF/*.DSA"/>
-                                                <exclude name="META-INF/*.RSA"/>
+                                                <include name="**" />
+                                                <exclude name="META-INF/*.SF" />
+                                                <exclude name="META-INF/*.DSA" />
+                                                <exclude name="META-INF/*.RSA" />
                                             </patternset>
                                         </unjar>
 
-                                        <delete file="@{jar}" failonerror="true"/>
+                                        <delete file="@{jar}" failonerror="true" />
                                         <!-- Touch it in case the file didn't have a manifest.
                                         Otherwise the JAR task below will fail if the manifest
                                         file doesn't exist. -->
-                                        <mkdir dir="${temp.file}/META-INF"/>
-                                        <touch file="${temp.file}/META-INF/MANIFEST.MF"/>
-                                        <jar destfile="@{jar}" basedir="${temp.file}"  includes="**"  manifest="${temp.file}/META-INF/MANIFEST.MF"/>
-                                        <delete dir="${temp.file}" failonerror="true"/>
+                                        <mkdir dir="${temp.file}/META-INF" />
+                                        <touch file="${temp.file}/META-INF/MANIFEST.MF" />
+                                        <jar destfile="@{jar}" basedir="${temp.file}" includes="**" manifest="${temp.file}/META-INF/MANIFEST.MF" />
+                                        <delete dir="${temp.file}" failonerror="true" />
                                     </sequential>
                                 </for>
 
                                 <!-- Replace the '.' in ${module.name} with '/' to get its path  -->
-                                <tempfile property="temp.file"></tempfile>
-                                <echo file="${temp.file}" message="${module.name}"></echo>
-                                <replace file="${temp.file}" token="." value="/"></replace>
-                                <loadfile property="module.path" srcfile="${temp.file}"></loadfile>
-                                <delete file="${temp.file}"></delete>
-                                <delete dir="target/module"></delete>
-                                <property name="module.dir" value="target/module/${module.path}/main"></property>
-                                <property name="module.lib.dir" value="${module.dir}/lib"></property>
-                                <copy file="src/main/resources/module/main/module.xml" tofile="${module.dir}/module.xml"></copy>
-                                <copy file="target/${project.artifactId}.jar" todir="${module.dir}"></copy>
+                                <tempfile property="temp.file" />
+                                <echo file="${temp.file}" message="${module.name}" />
+                                <replace file="${temp.file}" token="." value="/" />
+                                <loadfile property="module.path" srcfile="${temp.file}" />
+                                <delete file="${temp.file}" />
+                                <delete dir="target/module" />
+                                <property name="module.dir" value="target/module/${module.path}/main" />
+                                <property name="module.lib.dir" value="${module.dir}/lib" />
+                                <copy file="src/main/resources/module/main/module.xml" tofile="${module.dir}/module.xml" />
+                                <copy file="target/${project.artifactId}.jar" todir="${module.dir}" />
                                 <echo>Copying dependencies</echo>
                                 <copy todir="${module.lib.dir}">
-                                    <fileset dir="${project.build.directory}/dependency"></fileset>
+                                    <fileset dir="${project.build.directory}/dependency" />
                                 </copy>
                                 <echo>Module ${module.name} has been created in the target/module directory. Copy to your JBoss AS 7 installation.</echo>
                             </target>
