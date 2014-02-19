@@ -43,6 +43,12 @@
         <module>jnp</module>
     </modules>
 
+    <scm>
+        <connection>scm:git:git://github.com/jboss-set/jboss-as-legacy-naming.git</connection>
+        <developerConnection>scm:git:git@github.com:jboss-set/jboss-as-legacy-naming.git</developerConnection>
+        <url>https://github.com/jboss-set/jboss-as-legacy-naming</url>
+    </scm>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
