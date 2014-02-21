@@ -15,7 +15,6 @@
         <resource-root path="lib/jboss-ha-server-api.jar"/>
         <resource-root path="lib/jboss-ha-server-cache-spi.jar"/>
         <resource-root path="lib/jboss-kernel.jar"/>
-        <resource-root path="lib/jboss-logging.jar"/>
         <resource-root path="lib/jboss-remoting.jar"/>
         <resource-root path="lib/jboss-security-spi.jar"/>
         <resource-root path="lib/jnpserver.jar"/>
@@ -32,6 +31,7 @@
         <module name="org.jboss.as.network" />
         <module name="org.jboss.as.transactions"/>
         <module name="org.jboss.invocation"/>
+        <module name="org.jboss.logging"/>
         <module name="org.jboss.as.ee"/>
         <module name="org.jboss.as.server"/>
         <module name="org.jboss.modules"/>
@@ -46,6 +46,6 @@
         <module name="org.jboss.as.clustering.impl" />
         <module name="org.jboss.as.clustering.infinispan"/>
         <module name="org.jboss.as.clustering.service" />
-        <module name="javax.api"/>
+        <module name="javax.api" export="true"/>
     </dependencies>
 </module>

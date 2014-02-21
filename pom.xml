@@ -47,8 +47,8 @@
         <connection>scm:git:git://github.com/jboss-set/jboss-as-legacy-naming.git</connection>
         <developerConnection>scm:git:git@github.com:jboss-set/jboss-as-legacy-naming.git</developerConnection>
         <url>https://github.com/jboss-set/jboss-as-legacy-naming</url>
-      <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
 
     <dependencyManagement>
         <dependencies>

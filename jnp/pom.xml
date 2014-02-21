@@ -51,9 +51,20 @@
             </exclusions>
         </dependency>
         <dependency>
+             <artifactId>jboss-logging</artifactId>
+             <groupId>org.jboss.logging</groupId>
+             <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>org.jboss.as</groupId>
             <artifactId>jboss-as-clustering-impl</artifactId>
             <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>jboss-logging</artifactId>
+                    <groupId>org.jboss.logging</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.jboss.cluster</groupId>
@@ -81,6 +92,10 @@
                 <exclusion>
                     <artifactId>jboss-transaction-spi</artifactId>
                     <groupId>org.jboss.integration</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>jboss-logging</artifactId>
+                    <groupId>org.jboss.logging</groupId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -122,6 +137,12 @@
             <groupId>org.jboss.as</groupId>
             <artifactId>jboss-as-naming</artifactId>
             <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>jboss-logging</artifactId>
+                    <groupId>org.jboss.logging</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.jboss.remoting</groupId>
