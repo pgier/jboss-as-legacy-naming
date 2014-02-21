@@ -1,6 +1,24 @@
-*/target
-/target/
-/.idea
+# ignore Maven generated target folders
+~
+target
+# ignore eclipse files
+.project
+.classpath
+.settings
+.metadata
+# ignore m2e annotation processing files
+.factorypath
+# ignore IDEA files
+*.iml
+*.ipr
+*.iws
+.idea
+# ignore NetBeans files
+nbactions.xml
+nb-configuration.xml
+catalog.xml
 *.iml
 *.zip
 *.tar.gz
+# maven versions plugin
+pom.xml.versionsBackup
